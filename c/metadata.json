@@ -1,0 +1,10 @@
+{
+  "name": "Chazaya's Place",
+  "description": "A high-performance, anonymous web proxy and secure browsing platform with multiple virtual regions, Tor-inspired anonymity, and secure file sharing.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": []
+}

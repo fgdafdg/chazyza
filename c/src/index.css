@@ -1,0 +1,155 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --font-serif: "Playfair Display", serif;
+}
+
+:root {
+  --background: #080809;
+  --foreground: #e0e0e0;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Hardware style scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #141414;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #333;
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+.animate-pulse-soft {
+  animation: pulse-soft 3s ease-in-out infinite;
+}
+
+/* Lumin SDK structural overrides */
+#games-container {
+  background: transparent !important;
+}
+
+#games-container * {
+  border-radius: 0 !important;
+  font-family: var(--font-mono) !important;
+  box-shadow: none !important;
+}
+
+/* Force brutalist inputs */
+#games-container input {
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 10px 14px !important;
+  font-size: 11px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  transition: border-color 0.2s !important;
+}
+#games-container input:focus {
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  outline: none !important;
+}
+
+/* Force brutalist buttons */
+#games-container button,
+#games-container a[class*="px-"] {
+  background: transparent !important;
+  color: white !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  padding: 8px 16px !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  cursor: pointer !important;
+  transition: all 0.2s !important;
+  text-decoration: none !important;
+}
+#games-container button:hover,
+#games-container a[class*="px-"]:hover {
+  background: white !important;
+  color: black !important;
+}
+
+/* Active / Primary state overrides */
+#games-container .bg-indigo-500,
+#games-container .bg-indigo-600,
+#games-container .bg-blue-500,
+#games-container .bg-blue-600,
+#games-container .bg-purple-500,
+#games-container .bg-purple-600 {
+  background: white !important;
+  color: black !important;
+  border-color: white !important;
+}
+
+/* Treat container boxes like panels */
+#games-container > div {
+  background: transparent !important;
+}
+#games-container .bg-gray-800,
+#games-container .bg-gray-900,
+#games-container .bg-\[\#1a1a1a\],
+#games-container [class*="bg-"] {
+  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* Restyle game thumbnails */
+#games-container img {
+  filter: grayscale(1) contrast(1.2) brightness(0.8) !important;
+  transition: all 0.3s ease, transform 0.3s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  opacity: 0.8 !important;
+}
+#games-container div[style*="background-image"],
+#games-container a > div > div > div {
+    /* More defensive target to ensure we hit the custom div backgrounds */
+  filter: grayscale(1) contrast(1.2) brightness(0.8) !important;
+  transition: all 0.3s ease !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  opacity: 0.8 !important;
+}
+#games-container img:hover,
+#games-container div[style*="background-image"]:hover,
+#games-container a:hover > div > div > div {
+  filter: grayscale(0) contrast(1.1) brightness(1) !important;
+  border-color: rgba(255, 255, 255, 0.8) !important;
+  opacity: 1 !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 4px 4px 0px 0px rgba(255,255,255,0.1) !important;
+}
+
+/* Text elements */
+#games-container p,
+#games-container span,
+#games-container h1,
+#games-container h2,
+#games-container h3 {
+  color: #e0e0e0 !important;
+  font-family: var(--font-mono) !important;
+}
